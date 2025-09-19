@@ -2,6 +2,8 @@
 
 이미지에 프레임을 추가하여 정사각형으로 변환하는 데스크탑 애플리케이션
 
+<img width="1226" height="633" alt="example" src="https://github.com/user-attachments/assets/be4b3821-f11d-4cf8-8275-3d6c1ac6fd80" />
+
 ## 🎯 주요 기능
 
 - **다중 파일 선택**: 여러 이미지 파일을 한 번에 선택하여 변환
