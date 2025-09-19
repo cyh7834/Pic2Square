@@ -1,0 +1,54 @@
+{
+  "name": "pic2square-desktop",
+  "version": "1.0.0",
+  "description": "정방형 이미지 변환 데스크탑 애플리케이션",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": [
+    "electron",
+    "image",
+    "resizer",
+    "square",
+    "converter"
+  ],
+  "author": "Pic2Square Team",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^27.0.0",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.pic2square.desktop",
+    "productName": "Pic2Square",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules",
+      "!dist"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  }
+}

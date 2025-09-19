@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pic2Square - 정방형 이미지 변환기</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 헤더 -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-image"></i>
+                    Pic2Square
+                </h1>
+                <p class="app-subtitle">이미지에 프레임을 추가하여 정사각형으로 변환하는 도구</p>
+            </div>
+            <div class="window-controls">
+                <button class="window-control minimize">−</button>
+                <button class="window-control maximize">□</button>
+                <button class="window-control close">×</button>
+            </div>
+        </header>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="main-content">
+            <!-- 컨트롤 패널 -->
+            <section class="control-panel">
+                <div class="button-group">
+                    <button id="selectFilesBtn" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i>
+                        이미지 선택
+                    </button>
+                    <button id="convertBtn" class="btn btn-success" disabled>
+                        <i class="fas fa-magic"></i>
+                        변환 시작
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i>
+                        목록 지우기
+                    </button>
+                </div>
+
+                <!-- 전체 진행률 -->
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span class="progress-label">전체 진행률</span>
+                        <span id="progressText" class="progress-text">대기중...</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="overallProgress" class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 파일 목록 -->
+            <section class="file-list-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-list"></i>
+                        파일 목록
+                    </h2>
+                    <span id="fileCount" class="file-count">0개 파일</span>
+                </div>
+
+                <div class="file-list-container">
+                    <div id="fileList" class="file-list">
+                        <div class="empty-state">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>이미지 파일을 선택하여 변환을 시작하세요</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 상태바 -->
+        <footer class="status-bar">
+            <div class="status-content">
+                <span id="statusText" class="status-text">준비됨</span>
+                <span class="status-separator">|</span>
+                <span class="app-version">v1.0.0</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 로딩 오버레이 -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>변환 중...</p>
+        </div>
+    </div>
+
+    <!-- 알림 토스트 -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

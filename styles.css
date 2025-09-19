@@ -1,0 +1,687 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1e1e1e;
+    color: #cccccc;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #1e1e1e;
+}
+
+/* 헤더 */
+.app-header {
+    background: #2d2d30;
+    color: #cccccc;
+    padding: 8px 16px;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 35px;
+    -webkit-app-region: drag;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.app-title {
+    font-size: 13px;
+    font-weight: 400;
+    color: #cccccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.app-title i {
+    color: #007acc;
+    font-size: 16px;
+}
+
+.app-subtitle {
+    font-size: 11px;
+    color: #969696;
+    font-weight: 400;
+}
+
+.window-controls {
+    display: flex;
+    gap: 0;
+    -webkit-app-region: no-drag;
+}
+
+.window-control {
+    width: 46px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #cccccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.window-control:hover {
+    background: #404040;
+}
+
+.window-control.close:hover {
+    background: #e81123;
+    color: white;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+    flex: 1;
+    padding: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e;
+}
+
+/* 컨트롤 패널 */
+.control-panel {
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: 1px solid #3e3e42;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    background: #0e639c;
+    color: #ffffff;
+    min-height: 22px;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: #1177bb;
+    border-color: #1177bb;
+}
+
+.btn:active {
+    background: #0c5a8a;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #3e3e42;
+    border-color: #3e3e42;
+}
+
+.btn:disabled:hover {
+    background: #3e3e42;
+    border-color: #3e3e42;
+}
+
+.btn-primary {
+    background: #0e639c;
+    border-color: #0e639c;
+}
+
+.btn-primary:hover {
+    background: #1177bb;
+    border-color: #1177bb;
+}
+
+.btn-success {
+    background: #0e7c0e;
+    border-color: #0e7c0e;
+}
+
+.btn-success:hover {
+    background: #117711;
+    border-color: #117711;
+}
+
+.btn-secondary {
+    background: #5a5a5a;
+    border-color: #5a5a5a;
+}
+
+.btn-secondary:hover {
+    background: #6a6a6a;
+    border-color: #6a6a6a;
+}
+
+.btn-info {
+    background: #0078d4;
+    border-color: #0078d4;
+}
+
+.btn-info:hover {
+    background: #106ebe;
+    border-color: #106ebe;
+}
+
+/* 진행률 섹션 */
+.progress-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
+
+.progress-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.progress-label {
+    font-weight: 400;
+    color: #cccccc;
+    font-size: 12px;
+}
+
+.progress-text {
+    font-size: 11px;
+    color: #969696;
+}
+
+.progress-bar-container {
+    background: #3e3e42;
+    border-radius: 2px;
+    height: 4px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 100px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background: #3e3e42;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #007acc;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.2s ease;
+}
+
+/* 파일 목록 섹션 */
+.file-list-section {
+    background: #1e1e1e;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #3e3e42;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid #3e3e42;
+    background: #252526;
+}
+
+.section-header h2 {
+    color: #cccccc;
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-header h2 i {
+    color: #007acc;
+    font-size: 14px;
+}
+
+.file-count {
+    background: #0e639c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.file-list-container {
+    flex: 1;
+    overflow-y: auto;
+    background: #1e1e1e;
+}
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 빈 상태 */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #969696;
+    background: #1e1e1e;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #3e3e42;
+}
+
+.empty-state p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #969696;
+}
+
+/* 파일 아이템 */
+.file-item {
+    background: #1e1e1e;
+    border-bottom: 1px solid #3e3e42;
+    padding: 8px 16px;
+    transition: all 0.1s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 32px;
+}
+
+.file-item:hover {
+    background: #2a2d2e;
+}
+
+.file-item.processing {
+    background: #2a2d2e;
+    border-left: 3px solid #ffc107;
+}
+
+.file-item.completed {
+    background: #1e1e1e;
+    border-left: 3px solid #0e7c0e;
+}
+
+.file-item.error {
+    background: #1e1e1e;
+    border-left: 3px solid #f85149;
+}
+
+.file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 400;
+    color: #cccccc;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.file-name i {
+    color: #007acc;
+    font-size: 14px;
+}
+
+.file-size {
+    color: #969696;
+    font-size: 11px;
+    background: #3e3e42;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-left: 8px;
+}
+
+.file-details {
+    display: flex;
+    gap: 16px;
+    margin-left: 24px;
+    font-size: 11px;
+    color: #969696;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.detail-label {
+    font-size: 11px;
+    color: #969696;
+    font-weight: 400;
+}
+
+.detail-value {
+    font-size: 11px;
+    color: #cccccc;
+    font-weight: 400;
+}
+
+.file-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.progress-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 60px;
+}
+
+.progress-status {
+    font-weight: 400;
+    color: #cccccc;
+    font-size: 11px;
+}
+
+.progress-percentage {
+    font-size: 10px;
+    color: #969696;
+}
+
+.file-progress-bar {
+    background: #3e3e42;
+    border-radius: 2px;
+    height: 4px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 40px;
+}
+
+.file-progress-fill {
+    height: 100%;
+    background: #007acc;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.2s ease;
+}
+
+.file-actions {
+    display: flex;
+    gap: 4px;
+    margin-left: 8px;
+}
+
+.action-btn {
+    padding: 4px 8px;
+    border: 1px solid #3e3e42;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #0e639c;
+    color: #ffffff;
+    min-height: 20px;
+}
+
+.action-btn:hover {
+    background: #1177bb;
+    border-color: #1177bb;
+}
+
+.action-btn.open-file {
+    background: #0e7c0e;
+    border-color: #0e7c0e;
+}
+
+.action-btn.open-file:hover {
+    background: #117711;
+    border-color: #117711;
+}
+
+.action-btn.open-folder {
+    background: #5a5a5a;
+    border-color: #5a5a5a;
+}
+
+.action-btn.open-folder:hover {
+    background: #666666;
+    border-color: #666666;
+}
+
+.action-btn.remove {
+    background: #7c0e0e;
+    border-color: #7c0e0e;
+}
+
+.action-btn.remove:hover {
+    background: #771111;
+    border-color: #771111;
+}
+
+/* 상태바 */
+.status-bar {
+    background: #007acc;
+    color: white;
+    padding: 4px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    height: 22px;
+    border-top: 1px solid #3e3e42;
+}
+
+.status-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-text {
+    font-weight: 400;
+}
+
+.status-separator {
+    opacity: 0.6;
+    color: #cccccc;
+}
+
+.app-version {
+    opacity: 0.8;
+    font-size: 11px;
+}
+
+/* 로딩 오버레이 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.loading-content {
+    text-align: center;
+    color: #cccccc;
+    background: rgba(37, 37, 38, 0.95);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #3e3e42;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #3e3e42;
+    border-top: 2px solid #007acc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 토스트 알림 */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #252526;
+    border-radius: 4px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transform: translateX(400px);
+    transition: transform 0.2s ease;
+    border-left: 3px solid #0e7c0e;
+    border: 1px solid #3e3e42;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.error {
+    border-left-color: #f85149;
+}
+
+.toast.warning {
+    border-left-color: #ffc107;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toast-icon {
+    font-size: 14px;
+}
+
+.toast.success .toast-icon::before {
+    content: '✓';
+    color: #0e7c0e;
+}
+
+.toast.error .toast-icon::before {
+    content: '✗';
+    color: #f85149;
+}
+
+.toast.warning .toast-icon::before {
+    content: '⚠';
+    color: #ffc107;
+}
+
+.toast-message {
+    font-weight: 400;
+    color: #cccccc;
+    font-size: 13px;
+}
+
+/* 유틸리티 클래스 */
+.hidden {
+    display: none !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .file-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
